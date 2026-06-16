@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Reading · High Class Response · Raker SPSK 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:     #0E0E0E;
+  --navy:    #0D2B45;
+  --gold:    #C5973A;
+  --goldsft: #F0D9A8;
+  --sage:    #3D6B55;
+  --sage-lt: #E4F0EA;
+  --rust:    #B5452A;
+  --rust-lt: #FAEAE5;
+  --sky:     #1A5F8A;
+  --sky-lt:  #E3EFF7;
+  --off:     #F5F2EC;
+  --mid:     #6B6358;
+  --rule:    #DDD8CF;
+  --white:   #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--off);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 28px 48px;
+  position: relative;
+  z-index: 2;
+}
+.hero-tag {
+  display: inline-block;
+  background: rgba(197,151,58,0.18);
+  border: 1px solid rgba(197,151,58,0.4);
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 40px;
+  margin-bottom: 22px;
+}
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.meta-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 40px;
+  font-weight: 400;
+}
+.meta-pill strong { color: #fff; font-weight: 600; }
+
+/* Decorative blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+/* ── INTRO STRIP ── */
+.intro-strip {
+  background: var(--gold);
+  padding: 18px 28px;
+  text-align: center;
+}
+.intro-strip p {
+  font-size: 14px;
+  color: var(--navy);
+  font-weight: 500;
+  max-width: 620px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ── CONTENT ── */
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-top: 56px;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.babak-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 40px;
+}
+.b1 { background: var(--rust-lt); color: var(--rust); }
+.b2 { background: var(--sky-lt);  color: var(--sky);  }
+.b3 { background: var(--sage-lt); color: var(--sage); }
+
+.section-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mid);
+  letter-spacing: 0.12em;
+}
+
+.section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.section-tagline {
+  font-size: 14px;
+  color: var(--mid);
+  font-style: italic;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.section p {
+  font-size: 15.5px;
+  color: #2A2420;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+/* ── STAT CARDS ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+.stat-card {
+  border-radius: 12px;
+  padding: 18px 16px;
+  text-align: center;
+}
+.stat-card.rust { background: var(--rust-lt); }
+.stat-card.sky  { background: var(--sky-lt);  }
+.stat-card.sage { background: var(--sage-lt); }
+.stat-card.gold { background: #FDF6E3; }
+
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-card.rust .stat-num { color: var(--rust); }
+.stat-card.sky  .stat-num { color: var(--sky);  }
+.stat-card.sage .stat-num { color: var(--sage); }
+.stat-card.gold .stat-num { color: var(--gold); }
+
+.stat-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.stat-src {
+  font-size: 10px;
+  color: var(--mid);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  border-left: 4px solid var(--gold);
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: #FFFDF5;
+  border-radius: 0 8px 8px 0;
+}
+.pull-quote p {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-style: normal;
+}
+.pull-quote cite {
+  font-size: 12px;
+  color: var(--mid);
+  font-style: italic;
+}
+
+/* ── INSIGHT BOX ── */
+.insight-box {
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+}
+.insight-box.rust { background: var(--rust-lt); border: 1px solid #EAC5BB; }
+.insight-box.sky  { background: var(--sky-lt);  border: 1px solid #B8D4E8; }
+.insight-box.sage { background: var(--sage-lt); border: 1px solid #B4D4C0; }
+
+.insight-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.insight-box.rust .insight-label { color: var(--rust); }
+.insight-box.sky  .insight-label { color: var(--sky);  }
+.insight-box.sage .insight-label { color: var(--sage); }
+
+.insight-box p {
+  font-size: 14.5px;
+  margin-bottom: 0;
+  color: var(--ink);
+}
+
+/* ── KEY POINTS LIST ── */
+.key-points {
+  list-style: none;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.key-points li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: #2A2420;
+}
+.kp-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.kp-icon.rust { background: var(--rust-lt); }
+.kp-icon.sky  { background: var(--sky-lt);  }
+.kp-icon.sage { background: var(--sage-lt); }
+
+/* ── CONTEXT BOX (ASN kontekstual) ── */
+.context-box {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 28px 0;
+}
+.context-box .ctx-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.context-box p {
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 0;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.context-box p strong { color: #fff; font-weight: 600; }
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 48px 0 0;
+}
+
+/* ── REFLECTION PROMPT ── */
+.reflect {
+  background: #FFFDF5;
+  border: 1.5px dashed var(--gold);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 24px 0;
+}
+.reflect-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.reflect ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.reflect ul li {
+  font-size: 14.5px;
+  color: var(--navy);
+  font-weight: 500;
+  display: flex;
+  gap: 8px;
+}
+.reflect ul li::before {
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* ── CLOSING ── */
+.closing {
+  background: var(--navy);
+  margin-top: 64px;
+  padding: 48px 24px;
+  text-align: center;
+}
+.closing-inner { max-width: 600px; margin: 0 auto; }
+.closing h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.closing h3 span { color: var(--gold); }
+.closing p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+.closing-chip {
+  display: inline-block;
+  background: rgba(197,151,58,0.15);
+  border: 1px solid rgba(197,151,58,0.35);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 40px;
+  letter-spacing: 0.05em;
+  margin: 4px;
+}
+
+/* ── NAV DOTS ── */
+.nav-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+}
+.nav-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  padding: 0;
+}
+.nav-dot.active,
+.nav-dot:hover { background: var(--navy); transform: scale(1.4); }
+
+@media (max-width: 600px) {
+  .nav-dots { display: none; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="Navigasi cepat">
+  <button class="nav-dot active" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})" title="Intro"></button>
+  <button class="nav-dot" onclick="document.getElementById('babak1').scrollIntoView({behavior:'smooth'})" title="Babak 1"></button>
+  <button class="nav-dot" onclick="document.getElementById('babak2a').scrollIntoView({behavior:'smooth'})" title="Babak 2a"></button>
+  <button class="nav-dot" onclick="document.getElementById('babak2b').scrollIntoView({behavior:'smooth'})" title="Babak 2b"></button>
+  <button class="nav-dot" onclick="document.getElementById('babak3').scrollIntoView({behavior:'smooth'})" title="Babak 3"></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="blob" style="width:400px;height:400px;background:#C5973A;top:-100px;right:-80px;"></div>
+  <div class="blob" style="width:250px;height:250px;background:#4A90D9;bottom:-50px;left:50px;"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Pre-Reading · Raker Setditjen SPSK 2026</div>
+    <h1>Sebelum Besok,<br>Baca Ini <span>Dulu.</span></h1>
+    <p class="hero-sub">
+      Tiga ide besar yang akan jadi fondasi sesi motivasi kita besok — dikemas dari riset nyata, bukan sekadar kata-kata penyemangat.
+    </p>
+    <div class="hero-meta">
+      <span class="meta-pill">⏱ Waktu baca: <strong>~10 menit</strong></span>
+      <span class="meta-pill">📚 Sumber: <strong>HBR · Deloitte · Google · Amy Edmondson</strong></span>
+      <span class="meta-pill">🎙 Narasumber: <strong>Harri Firmansyah</strong></span>
+    </div>
+  </div>
+</section>
+
+<div class="intro-strip">
+  <p>"Kita bukan hanya akan dapat motivasi. Kita akan dapat <em>cara berpikir baru</em> untuk menghadapi tekanan dengan kelas."</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- ── BABAK 1 ── -->
+  <section class="section" id="babak1">
+    <div class="section-label">
+      <span class="babak-badge b1">Babak 1</span>
+      <span class="section-num">Wake-Up Call</span>
+    </div>
+    <h2>Kamu Bukan Lemah.<br>Sistemnya yang Berat.</h2>
+    <p class="section-tagline">Tentang organizational fatigue & mengapa burnout bukan soal mental kamu yang kurang kuat.</p>
+
+    <p>
+      Bayangkan: satu tim kecil mengelola koordinasi, anggaran, SDM, kearsipan, komunikasi publik, kepatuhan internal, dan manajemen risiko — sekaligus. Kalau ini terdengar familiar, itu karena memang itulah kondisi nyata Setditjen SPSK kita.
+    </p>
+
+    <p>
+      Ada sebuah konsep yang disebut <strong>organizational fatigue</strong> — kondisi di mana kelelahan bukan berasal dari kelemahan individu, melainkan dari sistem yang menuntut terlalu banyak dari terlalu sedikit orang. Riset dari Harvard Business Review (2024) menyebut hal ini sebagai <em>"responsibility expanding faster than support"</em> — tanggung jawab yang meluas lebih cepat dari dukungan yang tersedia.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card rust">
+        <div class="stat-num">42%</div>
+        <div class="stat-desc">Gen Z mengaku sering tidak bisa perform optimal karena burnout</div>
+        <div class="stat-src">Deloitte Global Survey 2025</div>
+      </div>
+      <div class="stat-card sky">
+        <div class="stat-num">36%</div>
+        <div class="stat-desc">Gen Z merasa kelelahan sepanjang waktu di tempat kerja</div>
+        <div class="stat-src">Deloitte Global Survey 2025</div>
+      </div>
+      <div class="stat-card rust">
+        <div class="stat-num">632</div>
+        <div class="stat-desc">Pegawai sektor publik yang diteliti — hasilnya: kekhawatiran terhadap perubahan = burnout lebih tinggi</div>
+        <div class="stat-src">HBR, 2024</div>
+      </div>
+    </div>
+
+    <p>
+      Data di atas bukan untuk bikin kamu makin sedih. Justru sebaliknya: ini membuktikan bahwa yang kamu rasakan <strong>bukan imajinasimu</strong>. Burnout dan kelelahan di lingkungan birokrasi dengan beban tinggi adalah fenomena yang terukur dan diakui secara ilmiah.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Burnout bukan masalah individu — ini masalah desain sistem. Jawabannya bukan beban yang lebih ringan, tapi dukungan yang lebih kuat."</p>
+      <cite>— Harvard Business Impact, 2025</cite>
+    </div>
+
+    <p>
+      Tapi ada kabar baiknya: para peneliti juga menemukan bahwa kelelahan ini bisa dibalik — bukan dengan kerja lebih sedikit, tapi dengan <strong>cara merespons yang berbeda</strong>. Inilah yang akan kita bahas bersama besok.
+    </p>
+
+    <div class="context-box">
+      <div class="ctx-label">🏛️ Konteks ASN Kemenkeu</div>
+      <p>
+        Sebagai pegawai Setditjen SPSK, kamu bukan staf biasa. Setiap dokumen yang kamu proses, setiap koordinasi yang kamu fasilitasi — <strong>berdampak langsung pada stabilitas sektor keuangan nasional</strong>. Tekanan yang besar ini bukan kebetulan. Ini adalah konsekuensi dari peran yang sesungguhnya besar. Pertanyaannya: <strong>apakah kamu melihatnya sebagai beban, atau sebagai bukti kepercayaan?</strong>
+      </p>
+    </div>
+
+    <div class="insight-box rust">
+      <div class="insight-label">💡 Insight Kunci — Babak 1</div>
+      <p>Krisis bukan tanda kegagalan. Dalam psikologi, krisis adalah <em>titik penentu</em> — bisa jadi titik runtuh, bisa jadi titik lompat. Yang membedakan adalah cara kita merespons. Besok kita belajar cara merespons dengan kelas.</p>
+    </div>
+
+    <div class="reflect">
+      <div class="reflect-label">🪞 Pertanyaan Refleksi — Bawa Besok</div>
+      <ul>
+        <li>Satu kondisi kerja yang paling terasa berat bagi kamu saat ini adalah apa?</li>
+        <li>Selama ini kamu merespons tekanan itu dengan cara bagaimana?</li>
+        <li>Kalau ada versi "lebih berkelas" dari respons itu, kira-kira seperti apa?</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── BABAK 2a ── -->
+  <section class="section" id="babak2a">
+    <div class="section-label">
+      <span class="babak-badge b2">Babak 2 · Bagian A</span>
+      <span class="section-num">Purpose & Trust</span>
+    </div>
+    <h2>Kamu Kerja Keras.<br>Tapi Tahu <span style="color:var(--sky)">Kenapa</span>?</h2>
+    <p class="section-tagline">Tentang purpose-driven work dan trust sebagai infrastruktur tim.</p>
+
+    <p>
+      Deloitte mewawancara <strong>23.482 responden Gen Z dan Millennial dari 44 negara</strong> di tahun 2025. Hasilnya mengejutkan: hampir <strong>9 dari 10</strong> dari mereka bilang bahwa <em>rasa bermakna dalam pekerjaan</em> adalah faktor penting bagi kepuasan kerja mereka — jauh lebih penting dari gaji semata.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card sky">
+        <div class="stat-num">9/10</div>
+        <div class="stat-desc">Gen Z & Millennial bilang purpose adalah kunci kepuasan kerja</div>
+        <div class="stat-src">Deloitte Global Survey 2025</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-num">77%</div>
+        <div class="stat-desc">Gen Z yang tidak merasakan purpose di kerja berniat resign dalam jangka pendek</div>
+        <div class="stat-src">Great Place to Work, 2026</div>
+      </div>
+      <div class="stat-card sky">
+        <div class="stat-num">6%</div>
+        <div class="stat-desc">Hanya 6% Gen Z yang menjadikan jabatan senior sebagai tujuan utama karir</div>
+        <div class="stat-src">Deloitte Global 2026</div>
+      </div>
+    </div>
+
+    <p>
+      Generasi kamu tidak dimotivasi oleh pangkat atau pujian formal. Yang menggerakkan kamu adalah <strong>rasa bahwa pekerjaanmu punya dampak nyata</strong>. Dan tahukah kamu? Sebagai ASN Kemenkeu, kamu sebenarnya punya modal itu — lebih dari yang kamu sadari.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Gen Z dan Millennials tidak mencari tangga karir. Mereka mencari pekerjaan yang bisa membuat mereka membuat perbedaan."</p>
+      <cite>— Deloitte Global Chief People & Purpose Officer, 2025</cite>
+    </div>
+
+    <p>
+      Tapi purpose saja tidak cukup. Riset Google yang terkenal dengan nama <strong>Project Aristotle</strong> mencari tahu: apa yang membuat tim berkinerja tinggi? Mereka meneliti ratusan tim dan menemukan satu faktor tunggal yang paling menentukan — bukan kemampuan individu, bukan anggaran, bukan tools kerja.
+    </p>
+
+    <div class="pull-quote">
+      <p>"Faktor tunggal terpenting di balik tim berkinerja tinggi adalah <em>psychological safety</em> — rasa aman untuk berbicara, mengaku salah, dan mengajukan ide tanpa takut dihukum."</p>
+      <cite>— Google Project Aristotle (dipopulerkan Amy Edmondson, Harvard Business School)</cite>
+    </div>
+
+    <p>
+      Prof. Amy Edmondson dari Harvard menemukan sesuatu yang kontra-intuitif: tim yang <em>melaporkan lebih banyak kesalahan</em> justru adalah tim yang <em>berkinerja lebih tinggi</em> — bukan karena mereka lebih ceroboh, tapi karena mereka cukup <strong>percaya satu sama lain</strong> untuk jujur.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card sage">
+        <div class="stat-num">#1</div>
+        <div class="stat-desc">Psychological safety adalah prediktor nomor satu efektivitas tim</div>
+        <div class="stat-src">Amy Edmondson, Harvard Business School</div>
+      </div>
+      <div class="stat-card sage">
+        <div class="stat-num">2×</div>
+        <div class="stat-desc">Tim dengan psychological safety tinggi dinilai efektif 2x lebih sering oleh manajemen</div>
+        <div class="stat-src">Google Project Aristotle</div>
+      </div>
+    </div>
+
+    <div class="context-box">
+      <div class="ctx-label">🏛️ Konteks ASN Kemenkeu</div>
+      <p>
+        Di Setditjen SPSK, kamu bekerja dalam tim kecil yang saling bergantung lintas fungsi. Ketika <strong>informasi disilo</strong>, ketika kamu ragu untuk menyampaikan masalah ke atasan karena takut dianggap tidak kompeten — itulah saat trust runtuh, dan beban kerja semua orang justru <strong>bertambah berat</strong>. Tim yang saling percaya bukan tim yang lemah. Tim yang saling percaya adalah tim yang paling efisien.
+      </p>
+    </div>
+
+    <div class="insight-box sky">
+      <div class="insight-label">💡 Insight Kunci — Babak 2A</div>
+      <p>Trust bukan soal perasaan hangat antar teman. Trust adalah <em>infrastruktur kerja</em>. Tanpa trust, koordinasi menjadi berat, informasi mengendap, dan setiap orang bekerja setengah blind. Membangun trust adalah investasi efisiensi — bukan aktivitas bonding semata.</p>
+    </div>
+
+    <div class="reflect">
+      <div class="reflect-label">🪞 Pertanyaan Refleksi — Bawa Besok</div>
+      <ul>
+        <li>Apakah kamu tahu dampak nyata dari pekerjaanmu terhadap kebijakan sektor keuangan Indonesia?</li>
+        <li>Siapa satu rekan di tim yang paling menopang pekerjaanmu, tanpa kamu sadari selama ini?</li>
+        <li>Apakah kamu merasa aman untuk jujur tentang kesulitan kerja kepada atasanmu?</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── BABAK 2b ── -->
+  <section class="section" id="babak2b">
+    <div class="section-label">
+      <span class="babak-badge b2">Babak 2 · Bagian B</span>
+      <span class="section-num">Efisiensi & Keseimbangan</span>
+    </div>
+    <h2>Sibuk ≠ Produktif.<br>Dan Istirahat ≠ <span style="color:var(--sky)">Malas.</span></h2>
+    <p class="section-tagline">Tentang kerja cerdas, prioritas berbasis dampak, dan work-life balance yang bukan sekadar jargon.</p>
+
+    <p>
+      Kita sering bangga dengan kesibukan. "Aku lagi hectic banget" terdengar seperti lencana kehormatan. Tapi riset menunjukkan sesuatu yang berbeda: <strong>kepadatan kolaborasi yang berlebihan</strong> justru menjadi salah satu penyebab utama burnout — bukan hanya beban kerja itu sendiri.
+    </p>
+
+    <div class="insight-box sky">
+      <div class="insight-label">📊 Temuan HBR 2023</div>
+      <p>Organisasi rata-rata menggunakan <strong>6–9 metode kolaborasi berbeda</strong> (email, Teams, rapat tatap muka, grup WA, dll.) — yang justru menciptakan inefisiensi masif karena setiap orang punya preferensi dan pola penggunaan berbeda. Banyak rapat dan notifikasi tidak sama dengan banyak kemajuan.</p>
+    </div>
+
+    <p>
+      Lalu ada konsep <strong>decision fatigue</strong> — kelelahan akibat terlalu banyak keputusan kecil yang harus diambil setiap hari. Semakin banyak hal tidak penting yang kamu putuskan, semakin lemah kemampuanmu untuk membuat keputusan penting. Solusinya? <strong>Sistematis dalam menetapkan prioritas</strong>.
+    </p>
+
+    <ul class="key-points">
+      <li>
+        <span class="kp-icon sky">⚡</span>
+        <span><strong>Urgensi ≠ Kepentingan.</strong> Banyak hal terasa mendesak padahal dampaknya kecil. Belajar membedakan keduanya adalah skill manajerial paling underrated di birokrasi.</span>
+      </li>
+      <li>
+        <span class="kp-icon sky">🔄</span>
+        <span><strong>Rework terjadi karena perencanaan lemah, bukan karena SDM lemah.</strong> Setiap jam yang diinvestasikan untuk memperjelas tujuan di awal menghemat 3–5 jam revisi di akhir.</span>
+      </li>
+      <li>
+        <span class="kp-icon sky">🤖</span>
+        <span><strong>AI dan otomasi bukan ancaman — itu sekutu.</strong> Tugas repetitif yang kamu kerjakan manual sekarang bisa diotomasi, memberi kamu ruang untuk hal yang benar-benar butuh otak dan hati manusia.</span>
+      </li>
+    </ul>
+
+    <p>
+      Soal work-life balance: ini bukan tentang pulang tepat jam 5 setiap hari. Deloitte 2026 menemukan bahwa <strong>Gen Z dan Millennial tidak mencari kemajuan cepat — mereka mencari kemajuan yang berkelanjutan</strong>. Mereka memilih workload yang sustainable, bukan performatif.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card gold">
+        <div class="stat-num">72%</div>
+        <div class="stat-desc">Gen Z & Millennial menempatkan work-life balance sebagai prioritas utama dalam memilih/bertahan di pekerjaan</div>
+        <div class="stat-src">Deloitte Global Survey 2025</div>
+      </div>
+      <div class="stat-card sage">
+        <div class="stat-num">25%</div>
+        <div class="stat-desc">Hanya 25% Gen Z yang menginginkan karir dengan promosi cepat — mayoritas lebih memilih kestabilan bermakna</div>
+        <div class="stat-src">Deloitte Global 2026</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Mereka tidak memilih apa yang performatif. Mereka memilih apa yang sustainable — workload yang jelas, dukungan nyata, dan jalur yang realistis."</p>
+      <cite>— Elizabeth Faber, Deloitte Global Chief People & Purpose Officer, 2026</cite>
+    </div>
+
+    <div class="context-box">
+      <div class="ctx-label">🏛️ Konteks ASN Kemenkeu</div>
+      <p>
+        Di lingkungan birokrasi dengan multiperan dan SDM terbatas, efisiensi bukan kemewahan — itu <strong>keharusan untuk bertahan</strong>. Bukan berarti memotong kualitas, tapi memilih dengan cerdas: <strong>mana yang harus diselesaikan sekarang, mana yang bisa didelegasikan, mana yang bisa diotomasi, dan mana yang sesungguhnya tidak perlu dilakukan sama sekali.</strong>
+      </p>
+    </div>
+
+    <div class="insight-box sky">
+      <div class="insight-label">💡 Insight Kunci — Babak 2B</div>
+      <p>Performance yang berkelanjutan bukan soal bekerja lebih keras. Ini soal bekerja pada hal yang <em>benar</em>, dengan energi yang <em>terjaga</em>. Kelelahan yang tidak dikelola bukan tanda dedikasi — itu sinyal sistem yang perlu diperbaiki bersama.</p>
+    </div>
+
+    <div class="reflect">
+      <div class="reflect-label">🪞 Pertanyaan Refleksi — Bawa Besok</div>
+      <ul>
+        <li>Satu kegiatan rutin yang kamu kerjakan setiap minggu — apakah itu benar-benar penting, atau hanya terasa urgent?</li>
+        <li>Kapan terakhir kali kamu benar-benar "hadir" saat makan bersama keluarga atau teman — bukan sambil cek HP kerja?</li>
+        <li>Satu hal kecil yang bisa kamu lakukan berbeda mulai minggu depan untuk menjaga energimu?</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── BABAK 3 ── -->
+  <section class="section" id="babak3">
+    <div class="section-label">
+      <span class="babak-badge b3">Babak 3</span>
+      <span class="section-num">Komitmen & Deklarasi</span>
+    </div>
+    <h2>Insight Tanpa Aksi<br>Adalah <span style="color:var(--sage)">Hiburan.</span></h2>
+    <p class="section-tagline">Tentang mengapa komitmen konkret — bukan semangat sesaat — yang benar-benar mengubah tim.</p>
+
+    <p>
+      Kita semua pernah pulang dari sebuah training atau seminar dengan semangat membara. Lalu dua minggu kemudian... kembali ke kebiasaan lama. Bukan karena kita tidak serius. Tapi karena <strong>insight tanpa struktur komitmen tidak akan bertahan</strong>.
+    </p>
+
+    <p>
+      Itulah mengapa sesi kita besok tidak akan berakhir dengan applause dan foto bersama saja. Kita akan <strong>membuat satu komitmen konkret yang bisa diukur</strong> — oleh diri sendiri, oleh atasan, dan oleh rekan kerja — dalam 30 hari ke depan.
+    </p>
+
+    <ul class="key-points">
+      <li>
+        <span class="kp-icon sage">🎯</span>
+        <span><strong>Komitmen yang baik itu spesifik.</strong> Bukan "saya akan lebih baik dalam berkomunikasi." Tapi "setiap ada masalah koordinasi, saya akan bicara langsung dalam 24 jam, bukan didiamkan."</span>
+      </li>
+      <li>
+        <span class="kp-icon sage">👥</span>
+        <span><strong>Komitmen yang diketahui orang lain lebih mungkin dijalankan.</strong> Ini bukan tekanan sosial — ini accountability yang sehat. Manusia secara psikologis lebih konsisten ketika ada yang "menyaksikan" komitmen kita.</span>
+      </li>
+      <li>
+        <span class="kp-icon sage">📅</span>
+        <span><strong>30 hari adalah jangka waktu ajaib.</strong> Cukup panjang untuk membentuk kebiasaan baru, cukup pendek untuk terasa tidak menakutkan.</span>
+      </li>
+    </ul>
+
+    <div class="insight-box sage">
+      <div class="insight-label">💡 Tentang Team Working Arrangement</div>
+      <p>Salah satu output resmi Raker ini adalah <strong>Deklarasi Nilai Kerja Tim</strong> — berisi prinsip seperti keterbukaan informasi, saling percaya, responsivitas komunikasi, dan dukungan lintas fungsi. Ini bukan dokumen seremonial. Besok kita akan mengisinya dengan komitmen nyata yang lahir dari refleksi pribadi setiap orang di ruangan.</p>
+    </div>
+
+    <div class="pull-quote">
+      <p>"Jika kamu mengubah kualitas percakapan dalam timmu, hasilnya akan meningkat secara eksponensial."</p>
+      <cite>— Amy C. Edmondson, Harvard Business School</cite>
+    </div>
+
+    <div class="context-box">
+      <div class="ctx-label">🏛️ Yang Akan Kamu Bawa Pulang</div>
+      <p>
+        Kamu akan pulang dengan <strong>satu lembar canvas pribadimu</strong> — berisi refleksi dari ketiga babak, satu komitmen konkret yang kamu tandatangani sendiri, dan kolom evaluasi yang bisa diisi oleh dirimu, atasanmu, dan rekanmu dalam 30 hari ke depan. <strong>Ini bukan PR. Ini investasi untuk dirimu sendiri.</strong>
+      </p>
+    </div>
+
+    <div class="reflect">
+      <div class="reflect-label">🪞 Pertanyaan Refleksi — Bawa Besok</div>
+      <ul>
+        <li>Apa SATU hal konkret yang ingin kamu ubah dalam cara kamu bekerja atau berinteraksi dengan tim?</li>
+        <li>Siapa satu orang yang ingin kamu jadikan "accountability partner" untuk komitmen 30 harimu?</li>
+        <li>Apa yang akan berbeda di timmu jika setiap orang menjalankan komitmennya masing-masing?</li>
+      </ul>
+    </div>
+  </section>
+
+</div><!-- /content -->
+
+<!-- CLOSING -->
+<div class="closing">
+  <div class="closing-inner">
+    <h3>Sampai Besok,<br><span>17 Juni 2026.</span></h3>
+    <p>Datang dengan pikiran terbuka. Tinggalkan dengan satu komitmen nyata. Itu sudah cukup untuk mengubah timmu.</p>
+    <div>
+      <span class="closing-chip">Kompak</span>
+      <span class="closing-chip">Inovatif</span>
+      <span class="closing-chip">Berdampak</span>
+    </div>
+    <p style="margin-top:24px;font-size:12px;color:rgba(255,255,255,0.35);">
+      Pre-Reading · Raker Setditjen SPSK 2026 · Narasumber: Harri Firmansyah<br>
+      Referensi: HBR (2023–2026) · Deloitte Global Survey (2025–2026) · Google Project Aristotle · Amy Edmondson, Harvard Business School
+    </p>
+  </div>
+</div>
+
+<script>
+  // Update active nav dot on scroll
+  const sections = ['hero','babak1','babak2a','babak2b','babak3'];
+  const dots = document.querySelectorAll('.nav-dot');
+  window.addEventListener('scroll', () => {
+    let current = 0;
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 200) current = i;
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  });
+</script>
+</body>
+</html>
